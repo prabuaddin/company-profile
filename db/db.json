@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "nameProduct": "RIVYA BACKHOUSIA ACNE POWER SERUM",
+            "imageUrl": "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/03/30140250/PDP-ECOMMERCE-TERBARU-acne-power-serum-920x920.jpg",
+            "price": 139920,
+            "description": "RIVYA Backhousia Acne Power Serum is formulated with 5 natural active ingredients"
+        },
+        {
+            "id": 2,
+            "nameProduct": "RIVYA BACKHOUSIA FACIAL WASH 100ML",
+            "imageUrl": "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/03/30140255/PDP-ECOMMERCE-TERBARU-fw-New-920x920.jpg",
+            "price": 87120,
+            "description": "RIVYA Backhousia Facial Wash is the 1st facial wash in Indonesia with Backhousia Citriodora & Sapindus Mukorossi"
+        }
+    ],
+    "teams": [
+        {
+            "id": "a123",
+            "nameMember": "Alfa Priliana",
+            "imageProfile": "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/28044702/FOTO_FOUNDER.png",
+            "role": "Founder"
+        },
+        {
+            "id": "b123",
+            "nameMember": "Gamma Febriyandi",
+            "imageProfile": "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01023841/FOTO_COFOUNDER.png",
+            "role": "Co-Founder"
+        }
+    ]
+}

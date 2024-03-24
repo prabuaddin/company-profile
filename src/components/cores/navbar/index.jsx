@@ -4,8 +4,26 @@ import { CiSearch } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+
 
 export default function Navbar() {
+  const[products, setProducts] = useState(null)
+
+  const onFetchProducts = async() => {
+    try {
+      const res = await axios.get(`http://localhost:5000/products`)
+      setProducts(res.data)
+    } catch (error) {
+     toast.error(error.message)
+    }
+  }
+
+  useEffect(() => {
+    onFetchProducts()
+  }, [])
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -52,17 +70,9 @@ export default function Navbar() {
             </Link>
             </li>
             <li>
-              <details className="z-10">
-                <summary>SHOP</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <Link href='/pages/product'>
+                PRODUCT
+              </Link>
             </li>
             <li>
             <Link href='/pages/about'>

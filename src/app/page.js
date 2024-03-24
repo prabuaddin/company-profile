@@ -1,41 +1,29 @@
 "use client";
 
 import { GoDiamond } from "react-icons/go";
-import Slider from "react-slick";
+import CardProducts from "~/components/card-products";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+import Link from "next/link";
 
 export default function Home() {
-  const dataTestimonial = [
-    {
-      name: "Prabu Addin Almuhasibi",
-      imgProfile:
-        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01062936/Screenshot-2022-10-01-132837.jpg",
-      review:
-        "Produk yang dipakai sangat cocok untuk kulit saya, pemakaian serum dari rivya sangat efektif",
-    },
-    {
-      name: "Jane Doe",
-      imgProfile:
-        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01062645/Screenshot-2022-10-01-132627.jpg",
-      review:
-        "Pertama kalinya mencoba skincare lokal, dan wow hasilnya sangat memuaskan",
-    },
-    {
-      name: "Kusuma Dwipa",
-      imgProfile:
-        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01062255/Mille-Haryanto-115x115.jpg",
-      review:
-        "Terima kasih rivya untuk produk serumnya, saya sangat cocok memakai serum ini!",
-    },
-    {
-      name: "Nabhila",
-      imgProfile:
-        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01063332/Screenshot-2022-10-01-133313-115x115.jpg",
-      review:
-        "Wangi banget saat diaplikasikan ke wajah. Tidak lengket atau bikin kusam",
-    },
-  ];
+  const [products, setProducts] = useState(null);
+
+  const onFetchProducts = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/products");
+      setProducts(res.data);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    onFetchProducts();
+  }, []);
 
   return (
     <>
@@ -58,6 +46,19 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="flex flex-col justify-center items-center text-center mt-5">
+        <h1 className="text-2xl font-semibold">Company Overview</h1>
+        <hr className="w-[20%] mt-1" />
+        <p className="mt-5 text-center px-10">
+          A Vegan Indonesian skincare product envision by Alfa Priliana, who
+          also plays an active role as a board member of D'Cost Seafood
+          Restaurant Group, Gold's Gym and Business Development Advisor for
+          Berrybenka. Rivya combines the best of nature with the best raw
+          material processing using modern technology from countries such as
+          Australia, South Korea, Switzerland, France, Canada, United States,
+          Spain, Italy, Burkina Faso, China, India, Indonesia.
+        </p>
       </div>
       <div className="grid grid-cols-3 px-32 py-10 gap-3">
         <div>
@@ -115,44 +116,27 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="grid justify-items-center gap-3">
+      <div className="flex flex-col justify-center items-center gap-3">
         <h1 className="text-xl">OUR SHOP</h1>
         <GoDiamond size={5} />
         <h1 className="text-3xl font-semibold">PRODUCTS</h1>
-        <div className="grid justify-items-center gap-3 bg-gray-100">
-          <div className="carousel carousel-center p-4 space-x-4 bg-transparent rounded-box">
-            <div className="carousel-item">
-              <img
-                src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
-                className="rounded-box"
-              />
+      </div>
+      <div>
+        {products?.map((product, index) => {
+          return (
+            <div key={index}>
+              <Link href={`/pages/detail-product/${product.id}`}>
+                <CardProducts
+                  key={index}
+                  imageUrl={product.imageUrl}
+                  price={product.price}
+                  nameProduct={product.nameProduct}
+                  description={product.description}
+                />
+              </Link>
             </div>
-            <div className="carousel-item">
-              <img
-                src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
-                className="rounded-box"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
-                className="rounded-box"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
-                className="rounded-box"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
-                className="rounded-box"
-              />
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
       <div className="grid justify-items-center gap-3 bg-brown-100">
         <h1 className="text-xl mt-5">OUR CUSTOMER</h1>
@@ -161,35 +145,46 @@ export default function Home() {
         <div className="carousel carousel-center w-full p-4 space-x-4 bg-transparent rounded-box">
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
             <img
-              src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+              src="https://media.licdn.com/dms/image/D5603AQFqAkaNiOjG8g/profile-displayphoto-shrink_400_400/0/1704163444287?e=1717027200&v=beta&t=ZiExzDoFixajKF0RDPAHVsCUY6b6CwOEXJ8WW64m5xU"
               className="rounded-full w-[100px] h-[100px]"
             />
             <p className="font-semibold">Prabu Addin Almuhasibi</p>
-            <p>"Produk yang dipakai sangat cocok sekali dengan kulit wajah saya"</p>
+            <p>
+              "Produk yang dipakai sangat cocok sekali dengan kulit wajah saya"
+            </p>
           </div>
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
             <img
-              src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+              src="https://i2.wp.com/mrshsfavouritethings-com.stackstaging.com/wp-content/uploads/2018/03/the-person-behind-mrs-hs-favourite-things-a-random-q-a-mrs-hs-favourite-things-1.jpg?resize=1080%2C1440"
               className="rounded-full w-[100px] h-[100px]"
             />
             <p className="font-semibold">Jane Doe</p>
-            <p>"Terima kasih rivya untuk produk serumnya, saya sangat cocok memakai serum ini!"</p>
+            <p>
+              "Terima kasih rivya untuk produk serumnya, saya sangat cocok
+              memakai serum ini!"
+            </p>
           </div>
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
             <img
-              src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+              src="https://imageio.forbes.com/specials-images/imageserve/64053b413b66613f66c91ff8/Portrait-of-a-businesswoman-standing-in-a-a-modern-office/960x0.jpg?format=jpg&width=960"
               className="rounded-full w-[100px] h-[100px]"
             />
-            <p className="font-semibold">Kusuma Dwipa</p>
-            <p>"Pertama kalinya mencoba skincare lokal, dan wow hasilnya sangat memuaskan"</p>
+            <p className="font-semibold">Mary Jane</p>
+            <p>
+              "Pertama kalinya mencoba skincare lokal, dan wow hasilnya sangat
+              memuaskan"
+            </p>
           </div>
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
             <img
-              src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+              src="https://img.freepik.com/free-photo/portrait-beautiful-blond-model-dressed-summer-hipster-clothes_158538-5478.jpg"
               className="rounded-full w-[100px] h-[100px]"
             />
             <p className="font-semibold">Nabhila</p>
-            <p>"Wangi banget saat diaplikasikan ke wajah. Tidak lengket atau bikin kusam"</p>
+            <p>
+              "Wangi banget saat diaplikasikan ke wajah. Tidak lengket atau
+              bikin kusam"
+            </p>
           </div>
         </div>
       </div>
