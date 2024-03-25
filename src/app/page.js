@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="hero max-h-screen lg:min-h-screen"
+        className="hero max-h-screen lg:h-[500px]"
         style={{
           backgroundImage:
             "url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqhuYCXLBSzV-Pp0ESYg5gDdJ_ZBEkqd7fgbiXP2y4NM-sNz43lySlJj6M4iVa3jIWTYUZxAxqmcVFKuOa33_Q15FubpwgOfnTvOvmW4XCwL7Z2hrrwWBqf9g1qj1_SY_OOKqmpzE6xIX5qdGCUHfaGTDjiNUjC0EPwnN8U6bsyzqHxrvibDE-ALJR/w1200-h630-p-k-no-nu/IMG-20220328-WA0001-01.jpeg)",
@@ -50,7 +50,7 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center text-center mt-5">
         <h1 className="text-2xl font-semibold">Company Overview</h1>
         <hr className="w-[20%] mt-1" />
-        <p className="mt-5 text-center px-10">
+        <p className="mt-5 text-center px-10 text-sm lg:text-xl">
           A Vegan Indonesian skincare product envision by Alfa Priliana, who
           also plays an active role as a board member of D'Cost Seafood
           Restaurant Group, Gold's Gym and Business Development Advisor for
