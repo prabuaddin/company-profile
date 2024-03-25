@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import CardProducts from "~/components/card-products";
 import Link from "next/link";
+import { MdSort } from "react-icons/md";
+import { BiCategory } from "react-icons/bi";
 
 
 export default function ProductList() {
@@ -23,7 +25,11 @@ export default function ProductList() {
   }, []);
 
   return (
-    <>    
+    <>
+    <div className="flex flex-row justify-start items-center px-7 lg:flex flex-row p-5 justify-start items-center gap-5">
+      <button className="btn bg-white border border-black w-[100px]">Sort<MdSort/></button>
+      <button className="btn bg-white border border-black w-[120px]">Category<BiCategory /></button>
+    </div>    
         <div>
           {
             products?.map((product, index) => {

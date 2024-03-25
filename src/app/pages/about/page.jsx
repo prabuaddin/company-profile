@@ -85,8 +85,8 @@ export default function AboutUs() {
         <div className="relative w-[300px] h-[300px] bg-red-100">
           <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/28044702/FOTO_FOUNDER.png"
-            width={"300px"}
-            height={"200px"}
+            width={300}
+            height={200}
             className="max-w-full min-h-full object-cover"
           />
         </div>
@@ -97,8 +97,8 @@ export default function AboutUs() {
         <div className="relative w-[300px] h-[300px] bg-red-100">
           <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01023841/FOTO_COFOUNDER.png"
-            width={"300px"}
-            height={"200px"}
+            width={300}
+            height={200}
             className="max-w-full min-h-full object-cover"
           />
         </div>
