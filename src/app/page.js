@@ -68,6 +68,7 @@ export default function Home() {
             alt="image1"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -76,6 +77,7 @@ export default function Home() {
             alt="image2"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -84,6 +86,7 @@ export default function Home() {
             alt="image3"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -100,6 +103,7 @@ export default function Home() {
             alt="image4"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -108,6 +112,7 @@ export default function Home() {
             alt="image5"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -116,6 +121,7 @@ export default function Home() {
             alt="image6"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -124,6 +130,7 @@ export default function Home() {
             alt="image7"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
         <div>
@@ -132,6 +139,7 @@ export default function Home() {
             alt="image8"
             width={300}
             height={200}
+            loading="lazy"
           />
         </div>
       </div>
