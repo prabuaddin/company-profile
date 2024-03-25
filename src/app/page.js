@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="hero max-h-screen lg:h-[500px]"
+        className="hero h-[300px] lg:h-[500px]"
         style={{
           backgroundImage:
             "url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqhuYCXLBSzV-Pp0ESYg5gDdJ_ZBEkqd7fgbiXP2y4NM-sNz43lySlJj6M4iVa3jIWTYUZxAxqmcVFKuOa33_Q15FubpwgOfnTvOvmW4XCwL7Z2hrrwWBqf9g1qj1_SY_OOKqmpzE6xIX5qdGCUHfaGTDjiNUjC0EPwnN8U6bsyzqHxrvibDE-ALJR/w1200-h630-p-k-no-nu/IMG-20220328-WA0001-01.jpeg)",
@@ -60,7 +60,7 @@ export default function Home() {
           Spain, Italy, Burkina Faso, China, India, Indonesia.
         </p>
       </div>
-      <div className="grid grid-cols-3 px-32 py-10 gap-3">
+      <div className="grid lg:grid-cols-3 px-32 py-10 gap-3">
         <div>
           <img
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01102118/SKANDY-B-copy.jpg"
