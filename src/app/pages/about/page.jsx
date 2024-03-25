@@ -1,26 +1,9 @@
 "use client";
-import axios from "axios";
-import { useEffect, useState } from "react";
+
 import { GoDiamond } from "react-icons/go";
-import TeamMember from "~/components/team-member";
+
 
 export default function AboutUs() {
-  const [teams, setTeam] = useState(null);
-
-  const onFetchTeams = async () => {
-    try {
-      const res = await axios.get("http://localhost/5000/teams");
-      setTeam(res.data);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    onFetchTeams();
-  }, []);
-
   return (
     <>
       <div
@@ -97,11 +80,6 @@ export default function AboutUs() {
             </li>
           </ul>
         </div>
-      </div>
-      <div className="flex flex-col justify-center items-center gap-3">
-        <h1 className="text-xl">OUR TEAMS</h1>
-        <GoDiamond size={5} />
-        <h1 className="text-3xl font-semibold">MEMBER</h1>
       </div>
       <div className="flex flex-col justify-center items-center mb-5 mt-5 bg-white border border-blue-gray-400 rounded-xl shadow-xl py-20 w-[400px] m-auto gap-9 lg:flex flex-col justify-center items-center text-center">
         <div className="relative w-[300px] h-[300px] bg-red-100">
