@@ -1,7 +1,7 @@
 "use client";
 
 import { GoDiamond } from "react-icons/go";
-
+import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -83,7 +83,7 @@ export default function AboutUs() {
       </div>
       <div className="flex flex-col justify-center items-center mb-5 mt-5 bg-white border border-blue-gray-400 rounded-xl shadow-xl py-20 w-[400px] m-auto gap-9 lg:flex flex-col justify-center items-center text-center">
         <div className="relative w-[300px] h-[300px] bg-red-100">
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/28044702/FOTO_FOUNDER.png"
             width={"300px"}
             height={"200px"}
@@ -95,7 +95,7 @@ export default function AboutUs() {
       </div>
       <div className="flex flex-col justify-center items-center mb-5 mt-5 bg-white border border-blue-gray-400 rounded-xl shadow-xl py-20 w-[400px] m-auto gap-9 lg:flex flex-col justify-center items-center text-center">
         <div className="relative w-[300px] h-[300px] bg-red-100">
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01023841/FOTO_COFOUNDER.png"
             width={"300px"}
             height={"200px"}

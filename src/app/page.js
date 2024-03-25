@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [products, setProducts] = useState(null);
@@ -50,7 +51,7 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center text-center mt-5">
         <h1 className="text-2xl font-semibold">Company Overview</h1>
         <hr className="w-[20%] mt-1" />
-        <p className="mt-5 text-center px-10 text-sm lg:text-xl">
+        <p className="mt-5 text-center px-10 text-sm lg:text-lg">
           A Vegan Indonesian skincare product envision by Alfa Priliana, who
           also plays an active role as a board member of D'Cost Seafood
           Restaurant Group, Gold's Gym and Business Development Advisor for
@@ -60,59 +61,77 @@ export default function Home() {
           Spain, Italy, Burkina Faso, China, India, Indonesia.
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 px-32 py-10 gap-3">
+      <div className="grid grid-cols-1 mr-6 lg:grid-cols-3 px-40 py-10 ml-10 gap-3">
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01102118/SKANDY-B-copy.jpg"
-            alt=""
+            alt="image1"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/29073219/ACNE-FIGHTER-GEL.jpg"
-            alt=""
+            alt="image2"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/29073240/FACIAL-WASH.jpg"
-            alt=""
+            alt="image3"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/29073253/SLEEP-CARE-INFUSED-SERUM.jpg"
-            alt=""
+            alt="image3"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/01/13092815/CATEGORY_logo.png"
-            alt=""
+            alt="image4"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/29073234/ACNE-POWER-SERUM.jpg"
-            alt=""
+            alt="image5"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/01/13064941/CATEGORY_glowingessencetoner.png"
-            alt=""
+            alt="image6"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/03/30084347/CATEGORY_rejuvenationcream-1.png"
-            alt=""
+            alt="image7"
+            width={300}
+            height={200}
           />
         </div>
         <div>
-          <img
+          <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/12/20090032/CATEGORY_dayinfusedserum.png"
-            alt=""
+            alt="image8"
+            width={300}
+            height={200}
           />
         </div>
       </div>
@@ -144,9 +163,11 @@ export default function Home() {
         <h1 className="text-3xl font-semibold">TESTIMONIAL REVIEW</h1>
         <div className="carousel carousel-center w-full p-4 space-x-4 bg-transparent rounded-box">
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
-            <img
+            <Image
               src="https://media.licdn.com/dms/image/D5603AQFqAkaNiOjG8g/profile-displayphoto-shrink_400_400/0/1704163444287?e=1717027200&v=beta&t=ZiExzDoFixajKF0RDPAHVsCUY6b6CwOEXJ8WW64m5xU"
-              className="rounded-full w-[100px] h-[100px]"
+              width={100}
+              height={100}
+              className="rounded-full"
             />
             <p className="font-semibold">Prabu Addin Almuhasibi</p>
             <p>
@@ -154,9 +175,11 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
-            <img
+            <Image
               src="https://i2.wp.com/mrshsfavouritethings-com.stackstaging.com/wp-content/uploads/2018/03/the-person-behind-mrs-hs-favourite-things-a-random-q-a-mrs-hs-favourite-things-1.jpg?resize=1080%2C1440"
-              className="rounded-full w-[100px] h-[100px]"
+              width={100}
+              height={100}
+              className="rounded-full"
             />
             <p className="font-semibold">Jane Doe</p>
             <p>
@@ -165,9 +188,11 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
-            <img
+            <Image
               src="https://imageio.forbes.com/specials-images/imageserve/64053b413b66613f66c91ff8/Portrait-of-a-businesswoman-standing-in-a-a-modern-office/960x0.jpg?format=jpg&width=960"
-              className="rounded-full w-[100px] h-[100px]"
+              width={100}
+              height={100}
+              className="rounded-full"
             />
             <p className="font-semibold">Mary Jane</p>
             <p>
@@ -176,9 +201,11 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
-            <img
+            <Image
               src="https://img.freepik.com/free-photo/portrait-beautiful-blond-model-dressed-summer-hipster-clothes_158538-5478.jpg"
-              className="rounded-full w-[100px] h-[100px]"
+              width={100}
+              height={100}
+              className="rounded-full"
             />
             <p className="font-semibold">Nabhila</p>
             <p>

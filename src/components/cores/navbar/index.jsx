@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
+import Image from "next/image";
 
 
 
@@ -36,7 +37,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <img src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/27043432/LOGO_header.png" alt="Rivya Logo" className="w-[100px] ml-3"/>
+          <Image src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/27043432/LOGO_header.png" width={100} height={100} alt="Rivya Logo" className="ml-3"/>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
