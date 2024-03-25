@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="hero min-h-screen"
+        className="hero max-h-screen lg:min-h-screen"
         style={{
           backgroundImage:
             "url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqhuYCXLBSzV-Pp0ESYg5gDdJ_ZBEkqd7fgbiXP2y4NM-sNz43lySlJj6M4iVa3jIWTYUZxAxqmcVFKuOa33_Q15FubpwgOfnTvOvmW4XCwL7Z2hrrwWBqf9g1qj1_SY_OOKqmpzE6xIX5qdGCUHfaGTDjiNUjC0EPwnN8U6bsyzqHxrvibDE-ALJR/w1200-h630-p-k-no-nu/IMG-20220328-WA0001-01.jpeg)",
@@ -36,7 +36,7 @@ export default function Home() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">
+            <h1 className="mb-5 text-xl font-bold lg:text-5xl">
               Revealing The Best For You
             </h1>
             <p className="mb-5">
