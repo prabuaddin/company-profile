@@ -9,22 +9,39 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
+import { data } from "autoprefixer";
 
 export default function Home() {
-  const [products, setProducts] = useState(null);
 
-  const onFetchProducts = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/products");
-      setProducts(res.data);
-    } catch (error) {
-      toast.error(error.message);
-    }
-  };
-
-  useEffect(() => {
-    onFetchProducts();
-  }, []);
+  const productData = [
+    {
+      id: 1,
+      nameProduct: "RIVYA BACKHOUSIA ACNE POWER SERUM",
+      imageUrl:
+        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/03/30140250/PDP-ECOMMERCE-TERBARU-acne-power-serum-920x920.jpg",
+      price: 139920,
+      description:
+        "RIVYA Backhousia Acne Power Serum is formulated with 5 natural active ingredients that can used in every type skin",
+    },
+    {
+      id: 2,
+      nameProduct: "RIVYA BACKHOUSIA FACIAL WASH 100ML",
+      imageUrl:
+        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2023/03/30140255/PDP-ECOMMERCE-TERBARU-fw-New-920x920.jpg",
+      price: 87120,
+      description:
+        "RIVYA Backhousia Facial Wash is the 1st facial wash in Indonesia with Backhousia Citriodora & Sapindus Mukorossi",
+    },
+    {
+      id: 3,
+      nameProduct: "RIVYA BACKHOUSIA SLEEP CARE INFUSED SERUM",
+      imageUrl:
+        "https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/03/29064413/FOTO_720x720_SLEEP-CARE.jpg",
+      price: 139920,
+      description:
+        "RIVYA Backhousia Sleep Care Infused Serum is formulated with 10 natural active ingredients that can be used by various skin types ",
+    },
+  ];
 
   return (
     <>
@@ -149,7 +166,7 @@ export default function Home() {
         <h1 className="text-3xl font-semibold">PRODUCTS</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-w-max">
-        {products?.map((product, index) => {
+        {productData.map((product, index) => {
           return (
             <div key={index}>
               <Link href={`/pages/detail-product/${product.id}`}>

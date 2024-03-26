@@ -12,7 +12,7 @@ const CardProducts = ({ imageUrl, price, nameProduct, description }) => {
             alt={nameProduct}
           />
         </div>
-        <h1 className="font-bold text-xl mt-5">Rp. {price.toLocaleString()}</h1>
+        <h1 className="font-bold text-xl mt-5">Rp. {price}</h1>
         <p className="font-semibold">{nameProduct}</p>
         <p>{description}</p>
       </div>
