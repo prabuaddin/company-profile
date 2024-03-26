@@ -23,7 +23,7 @@ export default function AboutUs() {
         <h1 className="text-xl mt-5">ABOUT</h1>
         <GoDiamond size={5} />
         <h1 className="text-3xl font-semibold">RIVYA</h1>
-        <div className="flex flex-row justify-start gap-5 px-10 py-10">
+        <div className="flex flex-col text-center lg:flex-row text-justify justify-start gap-5 px-10 py-10">
           <p>
             A Vegan Indonesian skincare product envision by Alfa Priliana, who
             also plays an active role as a board member of D'Cost Seafood
@@ -52,8 +52,8 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center gap-3">
-        <h1 className="text-xl">OUR VALUES</h1>
-        <div className="flex flex-col justify-center items-center text-center px-5 lg:flex flex-col justify-start py-5">
+        <h1 className="text-xl font-semibold">OUR VALUES</h1>
+        <div className="flex flex-col justify-center items-center text-justify px-5 lg:flex flex-col justify-start py-5">
           <ul>
             <li>
               DARE TO BE DIFFERENT - We encourage every team player to dare to
