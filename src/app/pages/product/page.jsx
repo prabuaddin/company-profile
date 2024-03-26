@@ -8,12 +8,14 @@ import { MdSort } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
 
 
+
 export default function ProductList() {
   const [products, setProducts] = useState(null);
 
   const onFetchProducts = async () => {
     try {
-      const res = await axios.get("https://fakestoreapi.com/products?limit=3");
+      const res = await axios.get('http://localhost:5000/products')
+      console.log(res)
       setProducts(res.data);
     } catch (error) {
       toast.error(error.message);
@@ -38,9 +40,9 @@ export default function ProductList() {
                   <Link href={`/pages/detail-product/${product.id}`}>
                   <CardProducts
                     key={index}
-                    image={product.image}
+                    imageUrl={product.imageUrl}
                     price={product.price}
-                    title={product.title}
+                    nameProduct={product.nameProduct}
                     description={product.description}
                   />
                   </Link>

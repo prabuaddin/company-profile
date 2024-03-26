@@ -15,7 +15,7 @@ export default function Home() {
 
   const onFetchProducts = async () => {
     try {
-      const res = await axios.get("https://fakestoreapi.com/products?limit=3");
+      const res = await axios.get("http://localhost:5000/products");
       setProducts(res.data);
     } catch (error) {
       toast.error(error.message);
@@ -25,8 +25,6 @@ export default function Home() {
   useEffect(() => {
     onFetchProducts();
   }, []);
-
-  if(products === null) return <h1>Loading...</h1>
 
   return (
     <>
@@ -157,9 +155,9 @@ export default function Home() {
               <Link href={`/pages/detail-product/${product.id}`}>
                 <CardProducts
                   key={index}
-                  image={product.image}
+                  imageUrl={product.imageUrl}
                   price={product.price}
-                  title={product.title}
+                  nameProduct={product.title}
                   description={product.description}
                 />
               </Link>
@@ -167,7 +165,7 @@ export default function Home() {
           );
         })}
       </div>
-      <div className="grid justify-items-center gap-3 bg-brown-100">
+      <div className="grid justify-items-center gap-3">
         <h1 className="text-xl mt-5">OUR CUSTOMER</h1>
         <GoDiamond size={5} />
         <h1 className="text-3xl font-semibold">TESTIMONIAL REVIEW</h1>
