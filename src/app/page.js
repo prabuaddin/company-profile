@@ -4,12 +4,9 @@ import { GoDiamond } from "react-icons/go";
 import CardProducts from "~/components/card-products";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import { data } from "autoprefixer";
+
 
 export default function Home() {
 

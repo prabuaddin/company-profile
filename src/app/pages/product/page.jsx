@@ -1,7 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
 import CardProducts from "~/components/card-products";
 import Link from "next/link";
 import { MdSort } from "react-icons/md";
