@@ -13,7 +13,7 @@ export default function ProductList() {
 
   const onFetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/products");
+      const res = await axios.get("https://fakestoreapi.com/products?limit=3");
       setProducts(res.data);
     } catch (error) {
       toast.error(error.message);
@@ -30,7 +30,7 @@ export default function ProductList() {
       <button className="btn bg-white border border-black w-[100px]">Sort<MdSort/></button>
       <button className="btn bg-white border border-black w-[120px]">Category<BiCategory /></button>
     </div>    
-        <div>
+        <div className="grid grid-cols-1 w-auto md:grid-cols-2 w-auto lg:grid-cols-3 min-w-max">
           {
             products?.map((product, index) => {
               return(
@@ -38,9 +38,9 @@ export default function ProductList() {
                   <Link href={`/pages/detail-product/${product.id}`}>
                   <CardProducts
                     key={index}
-                    imageUrl={product.imageUrl}
+                    image={product.image}
                     price={product.price}
-                    nameProduct={product.nameProduct}
+                    title={product.title}
                     description={product.description}
                   />
                   </Link>

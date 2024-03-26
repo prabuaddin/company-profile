@@ -15,7 +15,7 @@ export default function Home() {
 
   const onFetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/products");
+      const res = await axios.get("https://fakestoreapi.com/products?limit=3");
       setProducts(res.data);
     } catch (error) {
       toast.error(error.message);
@@ -25,6 +25,8 @@ export default function Home() {
   useEffect(() => {
     onFetchProducts();
   }, []);
+
+  if(products === null) return <h1>Loading...</h1>
 
   return (
     <>
@@ -61,7 +63,7 @@ export default function Home() {
           Spain, Italy, Burkina Faso, China, India, Indonesia.
         </p>
       </div>
-      <div className="grid grid-cols-1 mr-6 lg:grid-cols-3 px-40 py-10 ml-10 gap-3">
+      <div className="grid grid-cols-1 mr-6 md:grid-cols-2 lg:grid-cols-3 px-40 py-10 ml-10 gap-3">
         <div>
           <Image
             src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01102118/SKANDY-B-copy.jpg"
@@ -148,16 +150,16 @@ export default function Home() {
         <GoDiamond size={5} />
         <h1 className="text-3xl font-semibold">PRODUCTS</h1>
       </div>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-w-max">
         {products?.map((product, index) => {
           return (
             <div key={index}>
               <Link href={`/pages/detail-product/${product.id}`}>
                 <CardProducts
                   key={index}
-                  imageUrl={product.imageUrl}
+                  image={product.image}
                   price={product.price}
-                  nameProduct={product.nameProduct}
+                  title={product.title}
                   description={product.description}
                 />
               </Link>
@@ -169,7 +171,7 @@ export default function Home() {
         <h1 className="text-xl mt-5">OUR CUSTOMER</h1>
         <GoDiamond size={5} />
         <h1 className="text-3xl font-semibold">TESTIMONIAL REVIEW</h1>
-        <div className="carousel carousel-center w-full p-4 space-x-4 bg-transparent rounded-box">
+        <div className="carousel carousel-center w-full p-4 space-x-4 bg-transparent rounded-full">
           <div className="w-full carousel-item flex flex-col justify-center text-center items-center lg:w-[400px]">
             <Image
               src="https://media.licdn.com/dms/image/D5603AQFqAkaNiOjG8g/profile-displayphoto-shrink_400_400/0/1704163444287?e=1717027200&v=beta&t=ZiExzDoFixajKF0RDPAHVsCUY6b6CwOEXJ8WW64m5xU"

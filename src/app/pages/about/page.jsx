@@ -81,29 +81,31 @@ export default function AboutUs() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center mb-5 mt-5 bg-white border border-blue-gray-400 rounded-xl shadow-xl py-20 w-[400px] m-auto gap-9 lg:flex flex-col justify-center items-center text-center">
-        <div className="relative w-[300px] h-[300px] bg-red-100">
-          <Image
-            src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/28044702/FOTO_FOUNDER.png"
-            width={300}
-            height={200}
-            className="max-w-full min-h-full object-cover"
-          />
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-col justify-center items-center mb-5 mt-5 m-auto bg-white border border-blue-gray-400 rounded-none shadow-xl py-20 w-[400px] gap-9 lg:flex flex-col justify-center items-center text-center">
+          <div className="relative w-[300px] h-[300px] bg-red-100">
+            <Image
+              src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/09/28044702/FOTO_FOUNDER.png"
+              width={300}
+              height={200}
+              className="max-w-full min-h-full object-cover"
+            />
+          </div>
+          <h1 className="font-bold text-xl mt-10">Founder</h1>
+          <p>Alfa Apriliana</p>
         </div>
-        <h1 className="font-bold text-xl mt-10">Founder</h1>
-        <p>Alfa Apriliana</p>
-      </div>
-      <div className="flex flex-col justify-center items-center mb-5 mt-5 bg-white border border-blue-gray-400 rounded-xl shadow-xl py-20 w-[400px] m-auto gap-9 lg:flex flex-col justify-center items-center text-center">
-        <div className="relative w-[300px] h-[300px] bg-red-100">
-          <Image
-            src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01023841/FOTO_COFOUNDER.png"
-            width={300}
-            height={200}
-            className="max-w-full min-h-full object-cover"
-          />
+        <div className="flex flex-col justify-center items-center mb-5 mt-5 m-auto bg-white border border-blue-gray-400 rounded-none shadow-xl py-20 w-[400px] gap-9 lg:flex flex-col justify-center items-center text-center">
+          <div className="relative w-[300px] h-[300px] bg-red-100">
+            <Image
+              src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/rivyaofficialshop/2022/10/01023841/FOTO_COFOUNDER.png"
+              width={300}
+              height={200}
+              className="max-w-full min-h-full object-cover"
+            />
+          </div>
+          <h1 className="font-bold text-xl mt-10">Co-Founder</h1>
+          <p>Gamma Febriyandi</p>
         </div>
-        <h1 className="font-bold text-xl mt-10">Co-Founder</h1>
-        <p>Gamma Febriyandi</p>
       </div>
     </>
   );
