@@ -13,9 +13,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-      <link rel="icon" type="image/svg+xml+png" href="https://img.ws.mms.shopee.co.id/2133c42cdb3371fa1237595e7d49dc75" />
-      </head>
       <body className={inter.className}>
         <Navbar/>
         {children}
